@@ -1,8 +1,4 @@
-#Notes
-
-= Introduction =
-
-Notes Page
+#General Notes
 
 = Details =
 Thinking out aloud!
@@ -20,33 +16,33 @@ Test Systems:<br>
   * WAB Dump
   * WAB to CSV
   * CSV to WAB
-
+<br>
   * Outlook Dump
   * Outlook to CSV
   * CSV to Outlook
-
+<br>
   * MySQL Dump
   * MySQL to CSV
   * CSV to MySQL
 <br><br>
 Still need to think about how to do the sync system. Got a few ideas and need to write them down and see how they might work or not work.
-<br><br>
-Using Python 2.6 for Windows ... 
-
-
+<br>
 Stage A
 Using WAB as a base client, list all contacts and their properties. Accessing the WAB via a COM interface using something called WABAccess ... Using WABAccess at http://wabaccess.sourceforge.net/ We can also access Outlook Express/Windows Address Book for syncing.
 
-    Install Python and lib's on devs system.
-        Python for Windows ...
-        http://www.python.org/download/windows/
-            http://www.python.org/download/releases/2.6.4
+Current requirements for this project
 
-        Python Win32 Extentions
-        http://starship.python.net/crew/mhammond/win32/
-            http://sourceforge.net/projects/pywin32/files/
-            http://sourceforge.net/projects/pywin32/files/pywin32/Build%20214/pywin32-214.win32-py2.6.exe/download
+* Install Python and lib's on devs system.
+ * Python for Windows ... <br>
+   * http://www.python.org/download/windows/ <br>
+   * http://www.python.org/download/releases/2.6.5 <br>
+<br>
+ * Python Win32 Extentions<br>
+   * http://sourceforge.net/projects/pywin32/files/ <br>
+   * http://sourceforge.net/projects/pywin32/files/pywin32/Build%20214/pywin32-214.win32-py2.6.exe/download <br>
 
+ * WABAccess via Com
+   * http://wabaccess.sourceforge.net/ 
 
 Stage B
 Create a DB to copy contacts into
@@ -58,10 +54,10 @@ Clear WAB and import DB int contacts
 
 
 Stage C
-Setup Drupal to access and manage contacts
+Setup syncing system to sync to and from client to server
 
 Stage D
-Setup syncing system to sync to and from client to server
+Setup Drupal to access and manage contacts
 
 
 The syncing system can be used with WAB/Outlook, with some very basic mods, which I will put in later.  Would like to make the whole project as modular as possible, so that almost any Contacts/Address Book system can be sync into this system and any backend can be used. 
@@ -83,147 +79,146 @@ Current system is using to very special details of MySQL
     Creatation Date Field
     Updated Date Field
 
-If we create for other DB's, we will need to write code to do this client side and not in 
+If we create for other DB's, we will need to write code to do this client side and not in RMDB.
 
 
-
-Outlook Fields:
-   AllFields = ['Account',
-                'AssistantName',
-                'AssistantTelephoneNumber',
-                'AutoResolvedWinner',
-                'BillingInformation',
-                'Body',
-                'Business2TelephoneNumber',
-                'BusinessAddress',
-                'BusinessAddressCity',
-                'BusinessAddressCountry',
-                'BusinessAddressPostOfficeBox',
-                'BusinessAddressPostalCode',
-                'BusinessAddressState',
-                'BusinessAddressStreet',
-                'BusinessFaxNumber',
-                'BusinessHomePage',
-                'BusinessTelephoneNumber',
-                'CallbackTelephoneNumber',
-                'CarTelephoneNumber',
-                'Categories',
-                'Children',
-                'Class',
-                'Companies',
-                'CompanyAndFullName',
-                'CompanyLastFirstNoSpace',
-                'CompanyLastFirstSpaceOnly',
-                'CompanyMainTelephoneNumber',
-                'CompanyName',
-                'ComputerNetworkName',
-                'ConversationIndex',
-                'ConversationTopic',
-                'CustomerID',
-                'Department',
-                'DownloadState',
-                'Email1Address',
-                'Email1AddressType',
-                'Email1DisplayName',
-                'Email1EntryID',
-                'Email2Address',
-                'Email2AddressType',
-                'Email2DisplayName',
-                'Email2EntryID',
-                'Email3Address',
-                'Email3AddressType',
-                'Email3DisplayName',
-                'Email3EntryID',
-                'EntryID',
-                'FTPSite',
-                'FileAs',
-                'FirstName',
-                'FullName',
-                'FullNameAndCompany',
-                'Gender',
-                'GovernmentIDNumber',
-                'HasPicture',
-                'Hobby',
-                'Home2TelephoneNumber',
-                'HomeAddress',
-                'HomeAddressCity',
-                'HomeAddressCountry',
-                'HomeAddressPostOfficeBox',
-                'HomeAddressPostalCode',
-                'HomeAddressState',
-                'HomeAddressStreet',
-                'HomeFaxNumber',
-                'HomeTelephoneNumber',
-                'IMAddress',
-                'ISDNNumber',
-                'Importance',
-                'Initials',
-                'InternetFreeBusyAddress',
-                'IsConflict',
-                'JobTitle',
-                'Journal',
-                'Language',
-                'LastFirstAndSuffix',
-                'LastFirstNoSpace',
-                'LastFirstNoSpaceAndSuffix',
-                'LastFirstNoSpaceCompany',
-                'LastFirstSpaceOnly',
-                'LastFirstSpaceOnlyCompany',
-                'LastName',
-                'LastNameAndFirstName',
-                'MailingAddress',
-                'MailingAddressCity',
-                'MailingAddressCountry',
-                'MailingAddressPostOfficeBox',
-                'MailingAddressPostalCode',
-                'MailingAddressState',
-                'MailingAddressStreet',
-                'ManagerName',
-                'MarkForDownload',
-                'MessageClass',
-                'MiddleName',
-                'Mileage',
-                'MobileTelephoneNumber',
-                'NetMeetingAlias',
-                'NetMeetingServer',
-                'NickName',
-                'NoAging',
-                'OfficeLocation',
-                'OrganizationalIDNumber',
-                'OtherAddress',
-                'OtherAddressCity',
-                'OtherAddressCountry',
-                'OtherAddressPostOfficeBox',
-                'OtherAddressPostalCode',
-                'OtherAddressState',
-                'OtherAddressStreet',
-                'OtherFaxNumber',
-                'OtherTelephoneNumber',
-                'OutlookInternalVersion',
-                'OutlookVersion',
-                'PagerNumber',
-                'PersonalHomePage',
-                'PrimaryTelephoneNumber',
-                'Profession',
-                'RadioTelephoneNumber',
-                'ReferredBy',
-                'Saved',
-                'SelectedMailingAddress',
-                'Sensitivity',
-                'Size',
-                'Spouse',
-                'Subject',
-                'Suffix',
-                'TTYTDDTelephoneNumber',
-                'TelexNumber',
-                'Title',
-                'UnRead',
-                'User1',
-                'User2',
-                'User3',
-                'User4',
-                'UserCertificate',
-                'WebPage',
-                'YomiCompanyName',
-                'YomiFirstName',
-                'YomiLastName']
+List of All Outlook Fields <br>
+ * Account
+ * AssistantName
+ * AssistantTelephoneNumber
+ * AutoResolvedWinner
+ * BillingInformation
+ * Body
+ * Business2TelephoneNumber
+ * BusinessAddress
+ * BusinessAddressCity
+ * BusinessAddressCountry
+ * BusinessAddressPostOfficeBox
+ * BusinessAddressPostalCode
+ * BusinessAddressState
+ * BusinessAddressStreet
+ * BusinessFaxNumber
+ * BusinessHomePage
+ * BusinessTelephoneNumber
+ * CallbackTelephoneNumber
+ * CarTelephoneNumber
+ * Categories
+ * Children
+ * Class
+ * Companies
+ * CompanyAndFullName
+ * CompanyLastFirstNoSpace
+ * CompanyLastFirstSpaceOnly
+ * CompanyMainTelephoneNumber
+ * CompanyName
+ * ComputerNetworkName
+ * ConversationIndex
+ * ConversationTopic
+ * CustomerID
+ * Department
+ * DownloadState
+ * Email1Address
+ * Email1AddressType
+ * Email1DisplayName
+ * Email1EntryID
+ * Email2Address
+ * Email2AddressType
+ * Email2DisplayName
+ * Email2EntryID
+ * Email3Address
+ * Email3AddressType
+ * Email3DisplayName
+ * Email3EntryID
+ * EntryID
+ * FTPSite
+ * FileAs
+ * FirstName
+ * FullName
+ * FullNameAndCompany
+ * Gender
+ * GovernmentIDNumber
+ * HasPicture
+ * Hobby
+ * Home2TelephoneNumber
+ * HomeAddress
+ * HomeAddressCity
+ * HomeAddressCountry
+ * HomeAddressPostOfficeBox
+ * HomeAddressPostalCode
+ * HomeAddressState
+ * HomeAddressStreet
+ * HomeFaxNumber
+ * HomeTelephoneNumber
+ * IMAddress
+ * ISDNNumber
+ * Importance
+ * Initials
+ * InternetFreeBusyAddress
+ * IsConflict
+ * JobTitle
+ * Journal
+ * Language
+ * LastFirstAndSuffix
+ * LastFirstNoSpace
+ * LastFirstNoSpaceAndSuffix
+ * LastFirstNoSpaceCompany
+ * LastFirstSpaceOnly
+ * LastFirstSpaceOnlyCompany
+ * LastName
+ * LastNameAndFirstName
+ * MailingAddress
+ * MailingAddressCity
+ * MailingAddressCountry
+ * MailingAddressPostOfficeBox
+ * MailingAddressPostalCode
+ * MailingAddressState
+ * MailingAddressStreet
+ * ManagerName
+ * MarkForDownload
+ * MessageClass
+ * MiddleName
+ * Mileage
+ * MobileTelephoneNumber
+ * NetMeetingAlias
+ * NetMeetingServer
+ * NickName
+ * NoAging
+ * OfficeLocation
+ * OrganizationalIDNumber
+ * OtherAddress
+ * OtherAddressCity
+ * OtherAddressCountry
+ * OtherAddressPostOfficeBox
+ * OtherAddressPostalCode
+ * OtherAddressState
+ * OtherAddressStreet
+ * OtherFaxNumber
+ * OtherTelephoneNumber
+ * OutlookInternalVersion
+ * OutlookVersion
+ * PagerNumber
+ * PersonalHomePage
+ * PrimaryTelephoneNumber
+ * Profession
+ * RadioTelephoneNumber
+ * ReferredBy
+ * Saved
+ * SelectedMailingAddress
+ * Sensitivity
+ * Size
+ * Spouse
+ * Subject
+ * Suffix
+ * TTYTDDTelephoneNumber
+ * TelexNumber
+ * Title
+ * UnRead
+ * User1
+ * User2
+ * User3
+ * User4
+ * UserCertificate
+ * WebPage
+ * YomiCompanyName
+ * YomiFirstName
+ * YomiLastName
