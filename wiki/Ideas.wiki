@@ -1,0 +1,12 @@
+#Future Ideas
+
+= Introduction =
+
+Future ideas that might be problems.
+
+= Details =
+Current project state has not taken complete 64Bit installed systems, like Vista64, into account.  I don't believe want we have as the date of writing this, that native 64bit system will work with this.
+
+Also have not put any thought into UTF−8 encoding, from what I have readed, while doing basic research on this project, we will have to work at adding support for any encoding other than standard Western Character set.
+
+Optimization, like early or late bindings in the Windows COM system, might be worth looking into at once the basic project was got legs.
