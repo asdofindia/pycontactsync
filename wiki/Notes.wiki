@@ -1,0 +1,32 @@
+#Notes
+
+= Introduction =
+
+Notes Page
+
+= Details =
+Thinking out aloud!
+
+First big prject, working in a language that I believe is best suited for the cross-platform ideas.
+
+I wish to sync contacts on Windows, first, then maybe Linux and move onto Mac.  Python should work nicely, breaking the project into little modules and working on them until they work as expect then merge them into the big project.
+
+Getting to understand Google Project Hosting Site is in deal place to test many ideas.
+
+Test Systems:<br>
+-Learn Python
+-Find examples of code and get to understand these
+-Break examples and make them my own
+  *WAB Dump
+  *WAB to CSV
+  *CSV to WAB
+
+  *Outlook Dump
+  *Outlook to CSV
+  *CSV to Outlook
+
+  *MySQL Dump
+  *MySQL to CSV
+  *CSV to MySQL
+<br><br>
+Still need to think about how to do the sync system. Got a few ideas and need to write them down and see how they might work or not work.
