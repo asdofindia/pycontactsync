@@ -16,7 +16,7 @@ Server Contacts
 	Read and write into DB
 
 Sync System
-	What is needed for client<->server sync
+	What is needed for client '<->' server sync
 
 
 Believe what might be easiest to work with is to be able to export
