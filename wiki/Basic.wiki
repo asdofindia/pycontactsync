@@ -1,0 +1,27 @@
+#Basic outline
+
+= Introduction =
+Try and split project into smaller systems
+
+= Details =
+
+Client Contacts (Outlook/WAB)
+Sync System
+Server Contacts (MySQL/PostGreSQL)
+
+Client Contacts system
+	Read and write into Outlook/WAB
+
+Server Contacts
+	Read and write into DB
+
+Sync System
+	What is needed for client<->server sync
+
+
+Believe what might be easiest to work with is to be able to export
+Contacts to csv, clean out Outlook/WAB and re-import from CSV
+
+Work with an easy selected fields, this might leave open the place for
+bugs, but testing before hand with a large set and more eyes on the
+project, could quick help move through basic features.
