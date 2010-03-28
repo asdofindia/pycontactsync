@@ -1,0 +1,35 @@
+#WAB Notes - Research
+
+= Introduction =
+
+Windows Address Book - Notes and research details
+
+= Details =
+
+To access WAB from python, we are using WAB Access, which gives us a COM interface into the WAB. http://wabaccess.sourceforge.net/ or http://sourceforge.net/projects/wabaccess/
+
+Seeing that I am new to python and COM interface, I don't wish to say that there is a fault with any system, unless I have chatted with the Author of WAB Access, I will reserve the right to say I silly ...
+
+All reference to WAB, is from what I can see with python through the COM interface exposed with WABAccess, so please forgive my the use of wrong terminology is this reguard. 
+
+Researching dumping the WAB into CSV, I wish to understand as much of the WAB structure, so that we can take advantage of as much as possible.
+
+As I see, the WAB is build on containers, first the Identity, shared or default. Then Contacts (Elements of ID).  Then items of Contacts, which include many things like last modified time (Element ID 0x30080040), but WABAccess does not list this as a nice constant, so I had to go looking for these in MSDN, which I was able to find ...<br>http://msdn.microsoft.com/en-us/library/aa454929.aspx<br><br>
+So, I think it's a good idea to list some of the other MSDN URL's I was able to find, so that I don't need to spend too much time in future finding them ...
+
+MAPI Properties<br>
+http://msdn.microsoft.com/en-us/library/aa454438.aspx<br>
+
+Common Non-Transmittable Properties<br>
+http://msdn.microsoft.com/en-us/library/ms879578.aspx<br>
+
+Common Transmittable Properties<br>
+http://msdn.microsoft.com/en-us/library/ms879579.aspx<br>
+
+Mail User Properties - Most of what we use ...<br>
+http://msdn.microsoft.com/en-us/library/ms879904.aspx<br>
+http://wabaccess.sourceforge.net/Schema.htm<br>
+
+Other good links<br>
+http://msdn.microsoft.com/en-us/library/ms629361%28VS.85%29.aspx<br>
+http://msdn.microsoft.com/en-us/library/aa155719%28office.10%29.aspx<br>
