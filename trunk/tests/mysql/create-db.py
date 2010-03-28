@@ -1,3 +1,9 @@
+#
+# Create MySQL DB with fields that have creation and update tiem stamps.
+#
+# http://gusiev.com/2009/04/update-and-create-timestamps-with-mysql/
+#
+
 from win32com.client import Dispatch
 from adoconstants import *
 
@@ -5,7 +11,7 @@ from adoconstants import *
 oConn = Dispatch('ADODB.Connection')
 oConn.ConnectionString = "Driver={MySQL ODBC 5.1 Driver};" + \
                         "Server=192.168.2.102;Port=3306;" + \
-                        "User=root;Password=qazokm;Database=testdb"
+                        "User=root;Password=password;Database=testdb"
 
 oConn.Open()
 

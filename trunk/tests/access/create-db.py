@@ -6,7 +6,7 @@ import datetime
 import pywintypes
 
 #DB_FILEPATH = r"c:\temp\test.mdb"
-DB_FILEPATH = r"test-02.mdb"
+DB_FILEPATH = r"test-01.mdb"
 CONNECTION_STRING = 'Provider=Microsoft.Jet.OLEDB.4.0;' + \
 		'Jet OLEDB:Engine Type=5;' + \
                 'data Source=%s' % DB_FILEPATH
