@@ -24,3 +24,7 @@ Contacts to csv, clean out Outlook/WAB and re-import from CSV
 Work with an easy selected fields, this might leave open the place for
 bugs, but testing before hand with a large set and more eyes on the
 project, could quick help move through basic features.
+
+Need to create a de-duplicator. Single file run-time, so that we don't need to install python and extensions to run for end-user.
+
+Create an install system, to install and un-install cleanly.
