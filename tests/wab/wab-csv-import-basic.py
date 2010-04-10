@@ -182,11 +182,10 @@ def CSVImport(Test):
                         if colnum == 1:
                             ModifyContact(objSession, rownum + NumberOfContacts, constants.wabPR_NICKNAME, col)
                         elif colnum == 2:
-                            # FixME:
-                            # E-Mail in WAB is not stright forward.
-                            #ModifyContact(objSession, rownum, constants.wabPR_CONTACT_EMAIL_ADDRESSES, col)
-                            #
-                            print "Would add e-mail, but we don't!"
+                            # WAB can have multiple e-mail address
+                            # This currentl is only one address ...
+                            # wabPR_CONTACT_EMAIL_ADDRESSES &H3A56101F property gives an array of string, this array contains all email addresses.
+                            ModifyContact(objSession, rownum + NumberOfContacts, constants.wabPR_EMAIL_ADDRESS, col)
                         elif colnum == 3:
                             ModifyContact(objSession, rownum + NumberOfContacts, constants.wabPR_HOME_TELEPHONE_NUMBER, col)
                         elif colnum == 4:
@@ -200,7 +199,7 @@ def CSVImport(Test):
                         elif colnum == 8:
                             ModifyContact(objSession, rownum + NumberOfContacts, constants.wabPR_COMPANY_NAME, col)
                         elif colnum == 9:
-                            ModifyContact(objSession, rownum + NumberOfContacts, constants.wabPR_PROFESSION, col)
+                            ModifyContact(objSession, rownum + NumberOfContacts, constants.wabPR_TITLE, col)
                 colnum += 1
         print 'Row number %d: ' % rownum
         rownum += 1
