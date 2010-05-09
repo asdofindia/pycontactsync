@@ -30,6 +30,9 @@ Still need to think about how to do the sync system. Got a few ideas and need to
 Stage A
 Using WAB as a base client, list all contacts and their properties. Accessing the WAB via a COM interface using something called WABAccess ... Using WABAccess at http://wabaccess.sourceforge.net/ We can also access Outlook Express/Windows Address Book for syncing.
 
+
+System can be run from source, single binary in Windows or packaged in an install system.  Run from source would need Python and it's libraries. If the system is to be run from a single binary, like in Windows, the development system would need to also install py2exe and run the exe creation script.
+
 Current requirements for this project
 
 * Install Python and lib's on devs system.
@@ -37,12 +40,20 @@ Current requirements for this project
    * http://www.python.org/download/windows/ <br>
    * http://www.python.org/download/releases/2.6.5 <br>
 <br>
- * Python Win32 Extentions<br>
+ * Python Win32 Extensions<br>
    * http://sourceforge.net/projects/pywin32/files/ <br>
    * http://sourceforge.net/projects/pywin32/files/pywin32/Build%20214/pywin32-214.win32-py2.6.exe/download <br>
 
+ * Python py2exe<br>
+  * http://sourceforge.net/projects/py2exe/files/ <br>
+  * http://sourceforge.net/projects/py2exe/files/py2exe/0.6.9/py2exe-0.6.9.win32-py2.6.exe/download <br>
+
  * WABAccess via Com
    * http://wabaccess.sourceforge.net/ 
+
+ * MySQL Connector/ODBC
+  * http://dev.mysql.com/downloads/connector/odbc/5.1.html
+
 
 Stage B
 Create a DB to copy contacts into
@@ -76,7 +87,7 @@ http://gusiev.com/2009/04/update-and-create-timestamps-with-mysql/
 ToDo
 Current system is using to very special details of MySQL
     Auto Inc Field
-    Creatation Date Field
+    Creation Date Field
     Updated Date Field
 
 If we create for other DB's, we will need to write code to do this client side and not in RMDB.
