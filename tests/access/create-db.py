@@ -4,9 +4,25 @@ from win32com.client.gencache import EnsureDispatch as Dispatch
 import time
 import datetime
 import pywintypes
+import ConfigParser
+
+if os.path.exists("access.ini"):
+    config = ConfigParser.ConfigParser()
+    config.read(r"access.ini")
+
+    #print config.get('Auth', 'username', 0)
+    #print config.get('Auth', 'password', 0)
+    #print config.get('Admin', 'adminuser', 0)
+    #print config.get('Admin', 'adminpasswd', 0)
+
+    try:
+        DB_FILEPATH = config.get('AccessDB', 'database', 0)
+    except:
+        DB_FILEPATH = r"test-01.mdb"
+else:
+    DB_FILEPATH = r"test-01.mdb"
 
 #DB_FILEPATH = r"c:\temp\test.mdb"
-DB_FILEPATH = r"test-01.mdb"
 CONNECTION_STRING = 'Provider=Microsoft.Jet.OLEDB.4.0;' + \
 		'Jet OLEDB:Engine Type=5;' + \
                 'data Source=%s' % DB_FILEPATH
